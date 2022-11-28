@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10f;
-    public float xRange = 15f;    //límite pantalla
+    private float speed = 10f;     //velocidad de player
+    private float xRange = 15f;    //límite pantalla horizontal
 
     public GameObject projectilePrefab;
    
@@ -13,17 +13,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //movimiento horizontal de player
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * speed * Time.deltaTime * horizontalInput);
-        PlayerInBounds();  //llamamos a la funcion
+        PlayerInBounds();  //llamamos a la funcion (mantiene al player en la pantalla)
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))  //mecánica del disparo
         {
             FireProjectile();
         }
     }
 
-    private void PlayerInBounds()
+    private void PlayerInBounds()  
     {
         Vector3 pos = transform.position;
         if(pos.x < -xRange)
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FireProjectile()
+    private void FireProjectile() 
     {
         Instantiate(projectilePrefab, transform.position, Quaternion.identity);
     }

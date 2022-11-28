@@ -2714,6 +2714,7 @@ GameObject:
   - component: {fileID: 5853217805359030800}
   - component: {fileID: 5853217805338379202}
   - component: {fileID: 5853217805338379203}
+  - component: {fileID: 1514783865041169613}
   m_Layer: 0
   m_Name: SaintBernard
   m_TagString: Untagged
@@ -2820,6 +2821,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upperLimit: 20
   lowerLimit: -10
+--- !u!65 &1514783865041169613
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5853217805368441632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09159415, y: 0.20035498, z: 0.271985}
+  m_Center: {x: 0.00021226704, y: 0.09671881, z: 0.029574942}
 --- !u!1 &5853217805368444252
 GameObject:
   m_ObjectHideFlags: 0
